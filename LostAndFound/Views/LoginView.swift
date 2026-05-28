@@ -68,7 +68,6 @@ struct LoginView: View {
                 ErrorBanner(message: msg)
             }
 
-            demoHint
 
             PrimaryButton(
                 title: "Sign In",

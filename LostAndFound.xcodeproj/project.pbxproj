@@ -1,0 +1,466 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		6C2477B92FC5A9DE0070CA77 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6C2477B82FC5A9DE0070CA77 /* GoogleService-Info.plist */; };
+		6C2477C32FC5B5FB0070CA77 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 6C2477C22FC5B5FB0070CA77 /* FirebaseAuth */; };
+		6C2477C52FC5B6020070CA77 /* FirebaseCore in Frameworks */ = {isa = PBXBuildFile; productRef = 6C2477C42FC5B6020070CA77 /* FirebaseCore */; };
+		6C2477C72FC5B60D0070CA77 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 6C2477C62FC5B60D0070CA77 /* FirebaseFirestore */; };
+		6C2477C92FC7EAA60070CA77 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 6C2477C82FC7EAA60070CA77 /* FirebaseStorage */; };
+		C1000001 /* LostAndFoundApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2000001 /* LostAndFoundApp.swift */; };
+		C1000002 /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2000002 /* AppError.swift */; };
+		C1000003 /* UserRole.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2000003 /* UserRole.swift */; };
+		C1000004 /* UCUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2000004 /* UCUser.swift */; };
+		C1000005 /* ItemStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2000005 /* ItemStatus.swift */; };
+		C1000006 /* LostItemReport.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2000006 /* LostItemReport.swift */; };
+		C1000007 /* ClaimStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2000007 /* ClaimStatus.swift */; };
+		C1000008 /* Claim.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2000008 /* Claim.swift */; };
+		C1000009 /* RegisterRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2000009 /* RegisterRequest.swift */; };
+		C1000010 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2000010 /* Extensions.swift */; };
+		C1000011 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2000011 /* AuthService.swift */; };
+		C1000012 /* ReportService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2000012 /* ReportService.swift */; };
+		C1000013 /* ClaimService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2000013 /* ClaimService.swift */; };
+		C1000014 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2000014 /* NotificationService.swift */; };
+		C1000015 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2000015 /* AuthViewModel.swift */; };
+		C1000016 /* ItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2000016 /* ItemViewModel.swift */; };
+		C1000017 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C2000017 /* Assets.xcassets */; };
+		C1000018 /* SharedComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2000018 /* SharedComponents.swift */; };
+		C1000019 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2000019 /* LoginView.swift */; };
+		C1000020 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2000020 /* RegisterView.swift */; };
+		C1000021 /* ItemBoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2000021 /* ItemBoardView.swift */; };
+		C1000022 /* ItemDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2000022 /* ItemDetailView.swift */; };
+		C1000023 /* AddListingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2000023 /* AddListingView.swift */; };
+		C1000024 /* MyReportsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2000024 /* MyReportsView.swift */; };
+		C1000025 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2000025 /* ProfileView.swift */; };
+		C1000026 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2000026 /* MainTabView.swift */; };
+		C1000027 /* AdminViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2000027 /* AdminViews.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		6C2477B82FC5A9DE0070CA77 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		C2000001 /* LostAndFoundApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LostAndFoundApp.swift; sourceTree = "<group>"; };
+		C2000002 /* AppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
+		C2000003 /* UserRole.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRole.swift; sourceTree = "<group>"; };
+		C2000004 /* UCUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UCUser.swift; sourceTree = "<group>"; };
+		C2000005 /* ItemStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemStatus.swift; sourceTree = "<group>"; };
+		C2000006 /* LostItemReport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LostItemReport.swift; sourceTree = "<group>"; };
+		C2000007 /* ClaimStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClaimStatus.swift; sourceTree = "<group>"; };
+		C2000008 /* Claim.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Claim.swift; sourceTree = "<group>"; };
+		C2000009 /* RegisterRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterRequest.swift; sourceTree = "<group>"; };
+		C2000010 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		C2000011 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		C2000012 /* ReportService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportService.swift; sourceTree = "<group>"; };
+		C2000013 /* ClaimService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClaimService.swift; sourceTree = "<group>"; };
+		C2000014 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
+		C2000015 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
+		C2000016 /* ItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemViewModel.swift; sourceTree = "<group>"; };
+		C2000017 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C2000018 /* SharedComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedComponents.swift; sourceTree = "<group>"; };
+		C2000019 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		C2000020 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
+		C2000021 /* ItemBoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemBoardView.swift; sourceTree = "<group>"; };
+		C2000022 /* ItemDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailView.swift; sourceTree = "<group>"; };
+		C2000023 /* AddListingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddListingView.swift; sourceTree = "<group>"; };
+		C2000024 /* MyReportsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyReportsView.swift; sourceTree = "<group>"; };
+		C2000025 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		C2000026 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
+		C2000027 /* AdminViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminViews.swift; sourceTree = "<group>"; };
+		C3000001 /* LostAndFound.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LostAndFound.app; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		6C2477C02FC5B5E80070CA77 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6C2477C52FC5B6020070CA77 /* FirebaseCore in Frameworks */,
+				6C2477C92FC7EAA60070CA77 /* FirebaseStorage in Frameworks */,
+				6C2477C32FC5B5FB0070CA77 /* FirebaseAuth in Frameworks */,
+				6C2477C72FC5B60D0070CA77 /* FirebaseFirestore in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		6C2477C12FC5B5FB0070CA77 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C4000000 = {
+			isa = PBXGroup;
+			children = (
+				C4000001 /* LostAndFound */,
+				6C2477C12FC5B5FB0070CA77 /* Frameworks */,
+				C4000099 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C4000001 /* LostAndFound */ = {
+			isa = PBXGroup;
+			children = (
+				C2000001 /* LostAndFoundApp.swift */,
+				C4000002 /* Models */,
+				C4000003 /* Services */,
+				C4000004 /* ViewModels */,
+				C4000005 /* Views */,
+				C4000006 /* Utilities */,
+				C2000017 /* Assets.xcassets */,
+				6C2477B82FC5A9DE0070CA77 /* GoogleService-Info.plist */,
+			);
+			path = LostAndFound;
+			sourceTree = "<group>";
+		};
+		C4000002 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				C2000002 /* AppError.swift */,
+				C2000003 /* UserRole.swift */,
+				C2000004 /* UCUser.swift */,
+				C2000005 /* ItemStatus.swift */,
+				C2000006 /* LostItemReport.swift */,
+				C2000007 /* ClaimStatus.swift */,
+				C2000008 /* Claim.swift */,
+				C2000009 /* RegisterRequest.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		C4000003 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				C2000011 /* AuthService.swift */,
+				C2000012 /* ReportService.swift */,
+				C2000013 /* ClaimService.swift */,
+				C2000014 /* NotificationService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		C4000004 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				C2000015 /* AuthViewModel.swift */,
+				C2000016 /* ItemViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		C4000005 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C2000018 /* SharedComponents.swift */,
+				C2000019 /* LoginView.swift */,
+				C2000020 /* RegisterView.swift */,
+				C2000021 /* ItemBoardView.swift */,
+				C2000022 /* ItemDetailView.swift */,
+				C2000023 /* AddListingView.swift */,
+				C2000024 /* MyReportsView.swift */,
+				C2000025 /* ProfileView.swift */,
+				C2000026 /* MainTabView.swift */,
+				C2000027 /* AdminViews.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		C4000006 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				C2000010 /* Extensions.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		C4000099 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C3000001 /* LostAndFound.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C5000001 /* LostAndFound */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C6000001 /* Build configuration list for PBXNativeTarget "LostAndFound" */;
+			buildPhases = (
+				C7000001 /* Sources */,
+				C7000002 /* Resources */,
+				6C2477C02FC5B5E80070CA77 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LostAndFound;
+			productName = LostAndFound;
+			productReference = C3000001 /* LostAndFound.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C8000001 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					C5000001 = {
+						CreatedOnToolsVersion = 15.0;
+					};
+				};
+			};
+			buildConfigurationList = C6000002 /* Build configuration list for PBXProject "LostAndFound" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = C4000000;
+			packageReferences = (
+				6C2477BA2FC5AB720070CA77 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
+			productRefGroup = C4000099 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C5000001 /* LostAndFound */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C7000002 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C1000017 /* Assets.xcassets in Resources */,
+				6C2477B92FC5A9DE0070CA77 /* GoogleService-Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C7000001 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C1000001 /* LostAndFoundApp.swift in Sources */,
+				C1000002 /* AppError.swift in Sources */,
+				C1000003 /* UserRole.swift in Sources */,
+				C1000004 /* UCUser.swift in Sources */,
+				C1000005 /* ItemStatus.swift in Sources */,
+				C1000006 /* LostItemReport.swift in Sources */,
+				C1000007 /* ClaimStatus.swift in Sources */,
+				C1000008 /* Claim.swift in Sources */,
+				C1000009 /* RegisterRequest.swift in Sources */,
+				C1000010 /* Extensions.swift in Sources */,
+				C1000011 /* AuthService.swift in Sources */,
+				C1000012 /* ReportService.swift in Sources */,
+				C1000013 /* ClaimService.swift in Sources */,
+				C1000014 /* NotificationService.swift in Sources */,
+				C1000015 /* AuthViewModel.swift in Sources */,
+				C1000016 /* ItemViewModel.swift in Sources */,
+				C1000018 /* SharedComponents.swift in Sources */,
+				C1000019 /* LoginView.swift in Sources */,
+				C1000020 /* RegisterView.swift in Sources */,
+				C1000021 /* ItemBoardView.swift in Sources */,
+				C1000022 /* ItemDetailView.swift in Sources */,
+				C1000023 /* AddListingView.swift in Sources */,
+				C1000024 /* MyReportsView.swift in Sources */,
+				C1000025 /* ProfileView.swift in Sources */,
+				C1000026 /* MainTabView.swift in Sources */,
+				C1000027 /* AdminViews.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		C6000003 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		C6000004 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C6000005 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.uc.lostfound;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		C6000006 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.uc.lostfound;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C6000001 /* Build configuration list for PBXNativeTarget "LostAndFound" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C6000005 /* Debug */,
+				C6000006 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C6000002 /* Build configuration list for PBXProject "LostAndFound" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C6000003 /* Debug */,
+				C6000004 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		6C2477BA2FC5AB720070CA77 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 12.13.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		6C2477C22FC5B5FB0070CA77 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6C2477BA2FC5AB720070CA77 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		6C2477C42FC5B6020070CA77 /* FirebaseCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6C2477BA2FC5AB720070CA77 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCore;
+		};
+		6C2477C62FC5B60D0070CA77 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6C2477BA2FC5AB720070CA77 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		6C2477C82FC7EAA60070CA77 /* FirebaseStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6C2477BA2FC5AB720070CA77 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseStorage;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = C8000001 /* Project object */;
+}

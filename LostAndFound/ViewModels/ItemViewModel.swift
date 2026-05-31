@@ -162,12 +162,32 @@ final class ItemViewModel: ObservableObject {
             if let index = claims.firstIndex(where: { $0.id == claimId }) {
                 claims[index] = updated
             }
+            
+            if newStatus == .approved {
+                    await markReportAsClaimed(itemId: updated.itemId)
+            }
+            
             await notificationService.notifyClaimantOfStatusChange(
                 claimantUserId: updated.claimantId,
                 newStatus: newStatus
             )
         case .failure(let error):
             errorMessage = error.errorDescription
+        }
+    }
+    
+    private func markReportAsClaimed(itemId: String) async {
+        do {
+            try await Firestore.firestore()
+                .collection("reports")
+                .document(itemId)
+                .updateData(["status": ItemStatus.claimed.rawValue])
+
+            if let index = reports.firstIndex(where: { $0.id == itemId }) {
+                reports.remove(at: index)
+            }
+        } catch {
+            errorMessage = error.localizedDescription
         }
     }
 
@@ -206,6 +226,8 @@ final class ItemViewModel: ObservableObject {
     /// - Returns: Filtered and ordered array of LostItemReport
     func filteredReports(search: String, filter: ItemStatus?) -> [LostItemReport] {
         reports.filter { report in
+            
+            guard report.status != .claimed else { return false }
             let matchesSearch = search.isEmpty
                 || report.title.localizedCaseInsensitiveContains(search)
                 || report.location.localizedCaseInsensitiveContains(search)

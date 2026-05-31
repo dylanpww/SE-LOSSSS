@@ -126,13 +126,47 @@ private struct MyReportCard: View {
     var body: some View {
         Button(action: onTap) {
             HStack(spacing: 12) {
-                RoundedRectangle(cornerRadius: 10)
-                    .fill(AppColors.separator)
-                    .frame(width: 72, height: 72)
-                    .overlay(
-                        Image(systemName: "photo")
-                            .foregroundColor(.gray)
-                    )
+                Group {
+                    if let urlString = report.imageUrl,
+                       let url = URL(string: urlString) {
+                        AsyncImage(url: url) { phase in
+                            switch phase {
+                            case .success(let image):
+                                image
+                                    .resizable()
+                                    .scaledToFill()
+                            case .empty:
+                                RoundedRectangle(cornerRadius: 10)
+                                    .fill(AppColors.separator)
+                                    .overlay(
+                                        ProgressView()
+                                            .scaleEffect(0.7)
+                                    )
+                            case .failure:
+                                RoundedRectangle(cornerRadius: 10)
+                                    .fill(AppColors.separator)
+                                    .overlay(
+                                        Image(systemName: "photo")
+                                            .foregroundColor(.gray)
+                                    )
+                            @unknown default:
+                                RoundedRectangle(cornerRadius: 10)
+                                    .fill(AppColors.separator)
+                            }
+                        }
+                    } else {
+                        RoundedRectangle(cornerRadius: 10)
+                            .fill(AppColors.separator)
+                            .overlay(
+                                Image(systemName: "photo")
+                                    .foregroundColor(.gray)
+                            )
+                    }
+                }
+                .frame(width: 72, height: 72)
+                .cornerRadius(10)
+                .clipped()
+
 
                 VStack(alignment: .leading, spacing: 4) {
                     Text(report.title)

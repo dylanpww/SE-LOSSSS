@@ -7,4 +7,5 @@ import Foundation
 enum ItemStatus: String, Codable, CaseIterable {
     case lost  = "LOST"
     case found = "FOUND"
+    case claimed = "CLAIMED"
 }

@@ -187,14 +187,46 @@ struct AdminItemRow: View {
 
     var body: some View {
         HStack(spacing: 12) {
-            RoundedRectangle(cornerRadius: 8)
-                .fill(AppColors.separator)
-                .frame(width: 44, height: 44)
-                .overlay(
-                    Image(systemName: "photo")
-                        .foregroundColor(.gray)
-                        .font(.caption)
-                )
+            Group {
+                if let urlString = report.imageUrl,
+                   let url = URL(string: urlString) {
+                    AsyncImage(url: url) { phase in
+                        switch phase {
+                        case .success(let image):
+                            image
+                                .resizable()
+                                .scaledToFill()
+                        case .empty:
+                            RoundedRectangle(cornerRadius: 10)
+                                .fill(AppColors.separator)
+                                .overlay(
+                                    ProgressView()
+                                        .scaleEffect(0.7)
+                                )
+                        case .failure:
+                            RoundedRectangle(cornerRadius: 10)
+                                .fill(AppColors.separator)
+                                .overlay(
+                                    Image(systemName: "photo")
+                                        .foregroundColor(.gray)
+                                )
+                        @unknown default:
+                            RoundedRectangle(cornerRadius: 10)
+                                .fill(AppColors.separator)
+                        }
+                    }
+                } else {
+                    RoundedRectangle(cornerRadius: 10)
+                        .fill(AppColors.separator)
+                        .overlay(
+                            Image(systemName: "photo")
+                                .foregroundColor(.gray)
+                        )
+                }
+            }
+            .frame(width: 44, height: 44)
+            .cornerRadius(10)
+            .clipped()
 
             VStack(alignment: .leading, spacing: 2) {
                 Text(report.title)
@@ -428,6 +460,9 @@ struct AdminClaimsView: View {
             .background(AppColors.secondary)
             .navigationTitle("Claims")
             .navigationBarTitleDisplayMode(.inline)
+            .task{
+                await itemViewModel.fetchAllClaims()
+            }
         }
     }
 
@@ -512,7 +547,6 @@ struct AdminUsersView: View {
                 .navigationTitle("Users (\(itemViewModel.users.count))")
                 .navigationBarTitleDisplayMode(.inline)
                 .task {
-                    // Fetch users when the view appears
                     await itemViewModel.fetchAllUsers()
                 }
             }

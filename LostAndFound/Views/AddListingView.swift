@@ -215,7 +215,7 @@ struct AddListingView: View {
             return
         }
         guard let user = authViewModel.currentUser else { return }
-
+        
         let newReport = LostItemReport(
             title: itemTitle,
             location: lastSeen,

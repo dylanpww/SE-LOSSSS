@@ -2,6 +2,14 @@ import SwiftUI
 
 struct StatusBadge: View {
     let status: ItemStatus
+    
+    private var badgeColor: Color {
+            switch status {
+            case .lost:    return AppColors.lost
+            case .found:   return AppColors.found
+            case .claimed: return AppColors.admin
+            }
+        }
 
     var body: some View {
         Text(status.rawValue)
@@ -10,7 +18,7 @@ struct StatusBadge: View {
             .foregroundColor(.white)
             .padding(.horizontal, 10)
             .padding(.vertical, 4)
-            .background(status == .lost ? AppColors.lost : AppColors.found)
+            .background(badgeColor)
             .cornerRadius(6)
     }
 }
@@ -152,13 +160,46 @@ struct ItemCard: View {
 
     var body: some View {
         HStack(spacing: 12) {
-            RoundedRectangle(cornerRadius: 10)
-                .fill(AppColors.separator)
-                .frame(width: 72, height: 72)
-                .overlay(
-                    Image(systemName: "photo")
-                        .foregroundColor(.gray)
-                )
+            Group {
+                if let urlString = report.imageUrl,
+                   let url = URL(string: urlString) {
+                    AsyncImage(url: url) { phase in
+                        switch phase {
+                        case .success(let image):
+                            image
+                                .resizable()
+                                .scaledToFill()
+                        case .empty:
+                            RoundedRectangle(cornerRadius: 10)
+                                .fill(AppColors.separator)
+                                .overlay(
+                                    ProgressView()
+                                        .scaleEffect(0.7)
+                                )
+                        case .failure:
+                            RoundedRectangle(cornerRadius: 10)
+                                .fill(AppColors.separator)
+                                .overlay(
+                                    Image(systemName: "photo")
+                                        .foregroundColor(.gray)
+                                )
+                        @unknown default:
+                            RoundedRectangle(cornerRadius: 10)
+                                .fill(AppColors.separator)
+                        }
+                    }
+                } else {
+                    RoundedRectangle(cornerRadius: 10)
+                        .fill(AppColors.separator)
+                        .overlay(
+                            Image(systemName: "photo")
+                                .foregroundColor(.gray)
+                        )
+                }
+            }
+            .frame(width: 72, height: 72)
+            .cornerRadius(10)
+            .clipped()
 
             VStack(alignment: .leading, spacing: 4) {
                 Text(report.title)
@@ -187,8 +228,7 @@ struct ItemCard: View {
             RoundedRectangle(cornerRadius: 14)
                 .stroke(AppColors.separator, lineWidth: 0.5)
         )
-    }
-}
+    }}
 
 
 // MARK: - FilterChip

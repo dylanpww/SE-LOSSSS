@@ -43,7 +43,7 @@ final class ItemViewModel: ObservableObject {
     ) {
         self.reportService = reportService
         self.claimService = claimService
-        self.notificationService = notificationService
+        self.notificationService = notificationService //ini di hapus di file aslinya
     }
 
 
@@ -139,7 +139,7 @@ final class ItemViewModel: ObservableObject {
         case .success(let created):
             claims.insert(created, at: 0)
             successMessage = "Your claim has been submitted!"
-            await notificationService.notifyReporterOfNewClaim(
+            await notificationService.notifyReporterOfNewClaim(     //ini di hapus di file aslinya
                 reporterUserId: reporterIdFor(itemId: itemId),
                 itemTitle: titleFor(itemId: itemId)
             )
@@ -167,7 +167,7 @@ final class ItemViewModel: ObservableObject {
                     await markReportAsClaimed(itemId: updated.itemId)
             }
             
-            await notificationService.notifyClaimantOfStatusChange(
+            await notificationService.notifyClaimantOfStatusChange(     //ini di hapus di file aslinya
                 claimantUserId: updated.claimantId,
                 newStatus: newStatus
             )

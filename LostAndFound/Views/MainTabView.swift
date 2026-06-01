@@ -38,6 +38,8 @@ struct MainTabView: View {
         case 1:
             MyReportsView()
         case 2:
+            AddListingView()
+        case 3:
             ProfileView()
         default:
             ItemBoardView(showAddListing: $showAddListing)
@@ -71,14 +73,18 @@ private struct StudentTabBar: View {
                 label: "REPORT",
                 isSelected: selectedTab == 1
             ) { selectedTab = 1 }
-
-            addListingButton
+            
+            TabBarItem(icon: "plus",
+                       label: "ADD LISTING",
+                       isSelected: selectedTab == 2
+            ){ selectedTab = 2}
+                .multilineTextAlignment(.center)
 
             TabBarItem(
                 icon: "person.fill",
                 label: "PROFILE",
-                isSelected: selectedTab == 2
-            ) { selectedTab = 2 }
+                isSelected: selectedTab == 3
+            ) { selectedTab = 3 }
         }
         .padding(.horizontal, 16)
         .padding(.top, 12)

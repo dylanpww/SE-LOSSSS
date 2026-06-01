@@ -345,7 +345,19 @@ struct AdminItemsView: View {
         NavigationView {
             VStack(spacing: 0) {
                 searchBar
-                filterBar
+                HStack(spacing: 0) {
+                    FilterChip(title: "All items", isSelected: filterStatus == nil) {
+                        filterStatus = nil
+                    }
+                    FilterChip(title: "Lost", isSelected: filterStatus == .lost) {
+                        filterStatus = .lost
+                    }
+                    FilterChip(title: "Found", isSelected: filterStatus == .found) {
+                        filterStatus = .found
+                    }
+                }
+                .padding(.horizontal, 16)
+                .padding(.vertical, 8)
                 Divider()
                 ScrollView {
                     LazyVStack(spacing: 10) {
@@ -387,16 +399,16 @@ struct AdminItemsView: View {
         .background(AppColors.background)
     }
 
-    private var filterBar: some View {
-        HStack(spacing: 0) {
-            FilterChip(title: "All",   isSelected: filterStatus == nil)   { filterStatus = nil }
-            FilterChip(title: "Lost",  isSelected: filterStatus == .lost)  { filterStatus = .lost }
-            FilterChip(title: "Found", isSelected: filterStatus == .found) { filterStatus = .found }
-        }
-        .padding(.horizontal, 16)
-        .padding(.bottom, 8)
-        .background(AppColors.background)
-    }
+//    private var filterBar: some View {
+//        HStack(spacing: 0) {
+//            FilterChip(title: "All",   isSelected: filterStatus == nil)   { filterStatus = nil }
+//            FilterChip(title: "Lost",  isSelected: filterStatus == .lost)  { filterStatus = .lost }
+//            FilterChip(title: "Found", isSelected: filterStatus == .found) { filterStatus = .found }
+//        }
+//        .padding(.horizontal, 16)
+//        .padding(.bottom, 8)
+//        .background(AppColors.background)
+//    }
 
     private func deleteButton(for report: LostItemReport) -> some View {
         Button(action: {
